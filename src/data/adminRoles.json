@@ -1,0 +1,20 @@
+[
+  {
+    "id": "role-program-coordinator",
+    "role": "Program Coordinator",
+    "department": "Department of Computer Technology",
+    "institution": "University College of Jaffna",
+    "from": "2023-01",
+    "to": "2025-06",
+    "current": false
+  },
+  {
+    "id": "role-lms-committee",
+    "role": "LMS and Digital Learning Committee Member",
+    "department": "Faculty ICT Development Unit",
+    "institution": "University College of Jaffna",
+    "from": "2025-07",
+    "to": "Present",
+    "current": true
+  }
+]

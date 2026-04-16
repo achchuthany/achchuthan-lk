@@ -1,0 +1,99 @@
+.hero-section {
+  min-height: 100vh;
+  overflow-x: clip;
+  background: var(--color-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 16px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.hero-content {
+  width: 100%;
+  max-width: 860px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+
+.hero-name {
+  font-size: 56px;
+  font-weight: 500;
+  line-height: 1.05;
+  color: var(--color-text);
+}
+
+.hero-tagline {
+  font-size: 18px;
+  color: var(--color-muted);
+}
+
+.hero-cta-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.hero-cta {
+  min-height: 44px;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--color-text);
+  background: transparent;
+  border: 0.5px solid var(--color-text);
+  border-radius: 6px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.hero-cta:hover {
+  background: var(--color-text);
+  color: var(--color-bg);
+}
+
+.hero-meta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--color-muted);
+  flex-wrap: wrap;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--color-success);
+  font-weight: 500;
+}
+
+.hero-badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-success);
+}
+
+@media (min-width: 640px) and (max-width: 1024px) {
+  .hero-cta-row {
+    flex-wrap: nowrap;
+  }
+}
+
+@media (max-width: 639px) {
+  .hero-name {
+    font-size: 36px;
+  }
+}

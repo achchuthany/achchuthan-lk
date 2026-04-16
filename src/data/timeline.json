@@ -1,0 +1,42 @@
+[
+  {
+    "id": "timeline-lecturer-2022",
+    "role": "Lecturer (Computer Technology)",
+    "org": "University College of Jaffna",
+    "from": "2022-01",
+    "to": "Present",
+    "current": true,
+    "description": "Teaching core undergraduate modules, supervising final-year projects, and coordinating curriculum updates for emerging technologies.",
+    "track": "academic"
+  },
+  {
+    "id": "timeline-freelance-dev-2021",
+    "role": "Part-Time Full-Stack Developer",
+    "org": "Independent Client Projects",
+    "from": "2021-03",
+    "to": "Present",
+    "current": true,
+    "description": "Designing and delivering Laravel, MERN, and React Native solutions for local businesses and education-sector clients.",
+    "track": "software"
+  },
+  {
+    "id": "timeline-assistant-lecturer-2018",
+    "role": "Assistant Lecturer",
+    "org": "University of Jaffna",
+    "from": "2018-06",
+    "to": "2021-12",
+    "current": false,
+    "description": "Conducted practical labs in networking and databases while assisting module planning and student mentoring.",
+    "track": "academic"
+  },
+  {
+    "id": "timeline-junior-dev-2017",
+    "role": "Junior Web Developer",
+    "org": "Northern Digital Solutions",
+    "from": "2017-01",
+    "to": "2018-05",
+    "current": false,
+    "description": "Built and maintained PHP-based web portals, integrated MySQL databases, and supported production deployments on Linux servers.",
+    "track": "software"
+  }
+]

@@ -1,0 +1,44 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 28px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+  border: 1px solid transparent;
+}
+
+.badge--default {
+  background: var(--color-chip-muted);
+  color: var(--color-text);
+}
+
+.badge--academic {
+  background: rgba(37, 99, 235, 0.12);
+  color: #2563eb;
+}
+
+.badge--software {
+  background: rgba(249, 115, 22, 0.12);
+  color: #f97316;
+}
+
+.badge--expert {
+  background: rgba(22, 163, 74, 0.12);
+  color: #15803d;
+}
+
+.badge--proficient {
+  background: rgba(15, 23, 42, 0.08);
+  color: var(--color-text);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .badge--proficient,
+  :root[data-theme="dark"] .badge--proficient {
+    background: rgba(255, 255, 255, 0.08);
+  }
+}

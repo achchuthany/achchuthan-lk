@@ -1,0 +1,42 @@
+[
+  {
+    "id": "proj-campus-erp-laravel",
+    "title": "Campus Operations Portal",
+    "description": "A Laravel-based internal portal for timetable coordination, staff notices, and student service requests used by academic administrators.",
+    "stack": ["Laravel", "MySQL", "Blade", "Bootstrap"],
+    "category": "web",
+    "github": "https://github.com/achchuthan/campus-operations-portal",
+    "demo": "https://campus-portal-demo.example.com",
+    "thumbnail": "/assets/projects/campus-operations-portal.jpg"
+  },
+  {
+    "id": "proj-exam-workflow-laravel",
+    "title": "Examination Workflow System",
+    "description": "A Laravel web application that manages assessment schedules, marks submission workflows, and departmental approval pipelines.",
+    "stack": ["Laravel", "PostgreSQL", "Vue.js", "REST API"],
+    "category": "web",
+    "github": "https://github.com/achchuthan/examination-workflow-system",
+    "demo": "https://exam-workflow-demo.example.com",
+    "thumbnail": "/assets/projects/examination-workflow-system.jpg"
+  },
+  {
+    "id": "proj-research-collab-mern",
+    "title": "Research Collaboration Hub",
+    "description": "A MERN platform that helps lecturers and students post research topics, track milestones, and share publication resources.",
+    "stack": ["MongoDB", "Express", "React", "Node.js"],
+    "category": "web",
+    "github": "https://github.com/achchuthan/research-collab-hub",
+    "demo": "https://research-hub-demo.example.com",
+    "thumbnail": "/assets/projects/research-collaboration-hub.jpg"
+  },
+  {
+    "id": "proj-smart-attendance-rn",
+    "title": "Smart Attendance Mobile",
+    "description": "A React Native app for course attendance capture with QR validation, offline sync, and lecturer dashboards.",
+    "stack": ["React Native", "Expo", "Firebase", "Node.js API"],
+    "category": "mobile",
+    "github": "https://github.com/achchuthan/smart-attendance-mobile",
+    "demo": "https://smart-attendance-demo.example.com",
+    "thumbnail": "/assets/projects/smart-attendance-mobile.jpg"
+  }
+]

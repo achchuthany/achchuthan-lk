@@ -1,0 +1,55 @@
+{
+  "backend": [
+    {
+      "name": "Laravel",
+      "years": 6,
+      "level": "expert"
+    },
+    {
+      "name": "Node.js",
+      "years": 5,
+      "level": "proficient"
+    },
+    {
+      "name": "Express",
+      "years": 4,
+      "level": "proficient"
+    }
+  ],
+  "frontend": [
+    {
+      "name": "React",
+      "years": 5,
+      "level": "expert"
+    },
+    {
+      "name": "HTML/CSS",
+      "years": 8,
+      "level": "expert"
+    }
+  ],
+  "mobile": [
+    {
+      "name": "React Native",
+      "years": 3,
+      "level": "proficient"
+    }
+  ],
+  "infrastructure": [
+    {
+      "name": "Linux",
+      "years": 7,
+      "level": "expert"
+    },
+    {
+      "name": "Kubernetes",
+      "years": 2,
+      "level": "proficient"
+    },
+    {
+      "name": "Docker",
+      "years": 4,
+      "level": "proficient"
+    }
+  ]
+}

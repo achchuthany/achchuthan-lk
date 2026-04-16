@@ -1,0 +1,17 @@
+[
+  {
+    "id": "edu-msc-it",
+    "degree": "MSc",
+    "field": "Information Technology",
+    "institution": "University of Colombo School of Computing",
+    "year": 2021,
+    "thesis": "Scalable Web Service Architectures for Academic Information Systems"
+  },
+  {
+    "id": "edu-bsc-computing",
+    "degree": "BSc (Hons)",
+    "field": "Computer Science",
+    "institution": "University of Jaffna",
+    "year": 2017
+  }
+]

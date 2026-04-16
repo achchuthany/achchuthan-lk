@@ -1,0 +1,38 @@
+.filter-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.filter-tabs__button {
+  min-height: 44px;
+  padding: 8px 2px;
+  border: none;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  color: var(--color-muted);
+  font: inherit;
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.filter-tabs__button:hover {
+  color: var(--color-text);
+}
+
+.filter-tabs__button--active {
+  color: var(--color-text);
+  border-bottom-color: var(--color-text);
+}
+
+@media (max-width: 639px) {
+  .filter-tabs {
+    gap: 14px;
+  }
+
+  .filter-tabs__button {
+    min-height: 44px;
+  }
+}

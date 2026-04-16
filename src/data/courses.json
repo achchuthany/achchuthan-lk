@@ -1,0 +1,34 @@
+[
+  {
+    "id": "course-computer-networks",
+    "title": "Computer Networks",
+    "level": "Undergraduate",
+    "semester": "Semester 2",
+    "year": 2025,
+    "description": "Introduces network architectures, TCP/IP fundamentals, routing, switching, and basic network security with hands-on Cisco Packet Tracer labs."
+  },
+  {
+    "id": "course-web-technology",
+    "title": "Web Technology",
+    "level": "Undergraduate",
+    "semester": "Semester 1",
+    "year": 2026,
+    "description": "Covers modern web development concepts including responsive design, frontend workflows, RESTful APIs, and deployment of full-stack applications."
+  },
+  {
+    "id": "course-linux-administration",
+    "title": "Linux Administration",
+    "level": "Diploma",
+    "semester": "Semester 2",
+    "year": 2024,
+    "description": "Focuses on Linux server setup, shell scripting, user and permission management, service configuration, and troubleshooting in lab environments."
+  },
+  {
+    "id": "course-database-systems",
+    "title": "Database Systems",
+    "level": "Undergraduate",
+    "semester": "Semester 1",
+    "year": 2025,
+    "description": "Explores relational design, SQL optimization, normalization, transactions, and practical database-backed application design using MySQL and PostgreSQL."
+  }
+]

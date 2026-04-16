@@ -1,0 +1,15 @@
+.card {
+  min-width: 0;
+  max-width: 100%;
+  background: #ffffff;
+  border: 0.5px solid #e5e5e5;
+  border-radius: 12px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .card,
+  :root[data-theme="dark"] .card {
+    background: var(--color-surface);
+    border-color: var(--color-border);
+  }
+}

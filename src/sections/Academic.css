@@ -1,0 +1,185 @@
+.academic-section {
+  padding: 100px 0;
+  overflow-x: clip;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.academic-header {
+  margin-bottom: 36px;
+}
+
+.academic-header .section-heading {
+  gap: 12px;
+}
+
+.academic-subsection {
+  padding: 32px 0;
+  border-top: 0.5px solid var(--color-border);
+}
+
+.academic-subsection:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+.academic-subtitle {
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.academic-courses-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.academic-courses-grid > *,
+.academic-publications-list > * {
+  min-width: 0;
+}
+
+.academic-course-card,
+.academic-publication-card {
+  padding: 18px;
+}
+
+.academic-course-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.academic-course-title,
+.academic-education-degree,
+.academic-publication-title {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.academic-course-term,
+.academic-publication-meta,
+.academic-education-meta,
+.academic-roles-table {
+  color: var(--color-muted);
+  font-size: 12px;
+}
+
+.academic-course-term {
+  margin-bottom: 10px;
+}
+
+.academic-course-description,
+.academic-publication-authors,
+.academic-roles-heading {
+  color: var(--color-text-soft);
+  line-height: 1.7;
+}
+
+.academic-roles-heading {
+  margin-bottom: 12px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.academic-roles-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+}
+
+.academic-roles-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--color-bg);
+}
+
+.academic-roles-table th,
+.academic-roles-table td {
+  padding: 12px 14px;
+  text-align: left;
+  border-bottom: 0.5px solid var(--color-border);
+}
+
+.academic-roles-table th {
+  font-weight: 500;
+  color: var(--color-text);
+  background: color-mix(in srgb, var(--color-surface) 70%, transparent);
+}
+
+.academic-roles-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.academic-education-list,
+.academic-publications-list {
+  display: grid;
+  gap: 14px;
+}
+
+.academic-education-item {
+  padding-bottom: 14px;
+  border-bottom: 0.5px solid var(--color-border);
+}
+
+.academic-education-item:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.academic-education-meta {
+  margin-top: 4px;
+}
+
+.academic-education-thesis {
+  margin-top: 8px;
+  color: var(--color-muted);
+  font-style: italic;
+}
+
+.academic-filter-row {
+  margin-bottom: 20px;
+}
+
+.academic-publication-meta {
+  margin-top: 6px;
+}
+
+.academic-publication-authors {
+  margin-top: 10px;
+}
+
+.academic-doi-link {
+  margin-top: 12px;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.academic-doi-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 639px) {
+  .academic-section {
+    padding: 60px 0;
+  }
+
+  .academic-courses-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .academic-course-meta {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
