@@ -4,7 +4,8 @@
     "degree": "MSc",
     "field": "Computer Science",
     "institution": "University of Peradeniya",
-    "year": "19/05/2017– 28/12/2018",
+    "from": "2017-05-19",
+    "to": "2018-12-28",
     "GPA": "3.35/4.0"
   },
   {
@@ -12,7 +13,8 @@
     "degree": "B.Sc.[Hons] Special Degree",
     "field": "Computer Science",
     "institution": "University of Jaffna",
-    "year": "27/09/2010 – 25/04/2015",
+    "from": "2010-09-27",
+    "to": "2015-04-25",
     "GPA": "3.17/4.0"
   }
 ]

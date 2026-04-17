@@ -9,6 +9,7 @@ import adminRoles from "../data/adminRoles.json";
 import courses from "../data/courses.json";
 import education from "../data/education.json";
 import publications from "../data/publications.json";
+import { formatDateRange } from "../utils/date";
 import "./Academic.css";
 
 const MotionSection = motion.section;
@@ -41,12 +42,8 @@ const itemVariants = {
   },
 };
 
-function formatRoleRange(from, to) {
-  return `${from} – ${to}`;
-}
-
 function Academic() {
-  const [filter, setFilter] = useState("All");
+  const [filter] = useState("All");
 
   const filteredPublications =
     filter === "All"
@@ -114,11 +111,30 @@ function Academic() {
                 <tr key={role.id}>
                   <td>{role.role}</td>
                   <td>{role.department}</td>
-                  <td>{formatRoleRange(role.from, role.to)}</td>
+                  <td>{formatDateRange(role.from, role.to)}</td>
                 </tr>
               ))}
             </tbody>
           </table>
+        </div>
+
+        <div className="academic-roles-cards" aria-label="Administrative roles">
+          {adminRoles.map((role) => (
+            <Card
+              key={`${role.id}-card`}
+              className="academic-role-card"
+              hover={false}
+            >
+              <div className="academic-role-card__header">
+                <h4 className="academic-role-card__title">{role.role}</h4>
+                <p className="academic-role-card__range">
+                  {formatDateRange(role.from, role.to)}
+                </p>
+              </div>
+              <p className="academic-role-card__department">{role.department}</p>
+              <p className="academic-role-card__institution">{role.institution}</p>
+            </Card>
+          ))}
         </div>
       </div>
 
@@ -142,7 +158,7 @@ function Academic() {
                 {item.degree} in {item.field}
               </h4>
               <p className="academic-education-meta">
-                {item.institution} · {item.year} · GPA: {item.GPA}
+                {item.institution} · {formatDateRange(item.from, item.to)} · GPA: {item.GPA}
               </p>
               {item.thesis && (
                 <p className="academic-education-thesis">{item.thesis}</p>

@@ -40,14 +40,14 @@ function Stack() {
                 {stack[column.key].map((skill) => (
                   <div key={skill.name} className="stack-skill">
                     <div className="stack-skill__top">
-                      <span className="stack-skill__name">{skill.name}</span>
+                      <span className="stack-skill__meta">
+                        <span className="stack-skill__name">{skill.name}</span>
+                        <span className="stack-skill__years">{skill.years} yrs</span>
+                      </span>
                       <Badge variant={skill.level}>
                         {skill.level === "expert" ? "Expert" : "Proficient"}
                       </Badge>
                     </div>
-                    <span className="stack-skill__years">
-                      {skill.years} yrs
-                    </span>
                   </div>
                 ))}
               </div>

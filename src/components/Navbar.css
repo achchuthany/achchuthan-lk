@@ -140,9 +140,10 @@
   }
 
   .navbar__links--open {
-    max-height: 360px;
+    max-height: min(80vh, 520px);
     opacity: 1;
     transform: translateY(0);
+    overflow-y: auto;
     pointer-events: auto;
     padding: 12px 24px 16px;
   }

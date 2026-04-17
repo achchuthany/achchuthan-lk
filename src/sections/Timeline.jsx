@@ -5,16 +5,13 @@ import Card from "../components/Card";
 import FilterTabs from "../components/FilterTabs";
 import SectionHeading from "../components/SectionHeading";
 import timeline from "../data/timeline.json";
+import { formatDateRange } from "../utils/date";
 import "./Timeline.css";
 
 const MotionSection = motion.section;
 const MotionArticle = motion.article;
 
 const FILTERS = ["Show All", "Academic only", "Software only"];
-
-function formatDateRange(entry) {
-  return `${entry.from} – ${entry.current ? "Present" : entry.to}`;
-}
 
 function Timeline() {
   const [filter, setFilter] = useState("Show All");
@@ -75,7 +72,7 @@ function Timeline() {
                   <p className="timeline-entry__org">{entry.org}</p>
 
                   <p className="timeline-entry__date">
-                    <span>{formatDateRange(entry)}</span>
+                    <span>{formatDateRange(entry.from, entry.current ? "Present" : entry.to)}</span>
                     {entry.current && (
                       <span
                         className="timeline-entry__current-dot"

@@ -141,7 +141,7 @@ function Navbar() {
             <span className="navbar__theme-icon">
               {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
             </span>
-            {/* <span>{theme === "dark" ? "Light" : "Dark"}</span> */}
+            <span>{theme === "dark" ? "Switch to Light Mode" : "Switch to Dark Mode"}</span>
           </button>
         </nav>
       </div>

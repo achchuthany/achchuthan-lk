@@ -93,6 +93,10 @@
   border-radius: var(--radius);
 }
 
+.academic-roles-cards {
+  display: none;
+}
+
 .academic-roles-table {
   width: 100%;
   border-collapse: collapse;
@@ -114,6 +118,39 @@
 
 .academic-roles-table tbody tr:last-child td {
   border-bottom: none;
+}
+
+.academic-role-card {
+  padding: 18px;
+}
+
+.academic-role-card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.academic-role-card__title {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.academic-role-card__range,
+.academic-role-card__institution {
+  font-size: 12px;
+  color: var(--color-muted);
+}
+
+.academic-role-card__department {
+  color: var(--color-text-soft);
+  line-height: 1.6;
+}
+
+.academic-role-card__institution {
+  margin-top: 8px;
 }
 
 .academic-education-list,
@@ -181,5 +218,19 @@
   .academic-course-meta {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .academic-roles-table-wrap {
+    display: none;
+  }
+
+  .academic-roles-cards {
+    display: grid;
+    gap: 12px;
+  }
+
+  .academic-role-card__header {
+    flex-direction: column;
+    gap: 6px;
   }
 }
