@@ -1,0 +1,89 @@
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  z-index: 1200;
+  pointer-events: none;
+  background: rgba(17, 17, 17, 0.06);
+}
+
+.scroll-progress__bar {
+  height: 100%;
+  width: 100%;
+  transform-origin: left center;
+  transform: scaleX(0);
+  background: linear-gradient(90deg, #2563eb 0%, #0ea5e9 100%);
+  transition: transform 0.08s linear;
+}
+
+.back-to-top {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg);
+  color: var(--color-text);
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+  z-index: 1050;
+}
+
+.back-to-top--visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.back-to-top:hover {
+  color: var(--color-accent);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .scroll-progress {
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  :root:not([data-theme="light"]) .scroll-progress__bar {
+    background: linear-gradient(90deg, #60a5fa 0%, #22d3ee 100%);
+  }
+
+  :root:not([data-theme="light"]) .back-to-top {
+    background: var(--color-surface);
+  }
+}
+
+:root[data-theme="dark"] .scroll-progress {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+:root[data-theme="dark"] .scroll-progress__bar {
+  background: linear-gradient(90deg, #60a5fa 0%, #22d3ee 100%);
+}
+
+:root[data-theme="dark"] .back-to-top {
+  background: var(--color-surface);
+}
+
+@media (max-width: 639px) {
+  .back-to-top {
+    right: 16px;
+    bottom: 16px;
+  }
+}

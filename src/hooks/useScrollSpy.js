@@ -12,27 +12,48 @@ function useScrollSpy(sectionIds) {
       return undefined;
     }
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visibleEntries = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort(
-            (first, second) =>
-              second.intersectionRatio - first.intersectionRatio,
-          );
+    const updateActiveSection = () => {
+      const offsetTop = 110;
+      let nextActiveId = sections[0].id;
+      const pageBottomOffset = 4;
 
-        if (visibleEntries[0]?.target?.id) {
-          setActiveSectionId(visibleEntries[0].target.id);
+      sections.forEach((section) => {
+        const rect = section.getBoundingClientRect();
+
+        if (rect.top - offsetTop <= 0) {
+          nextActiveId = section.id;
         }
+      });
+
+      const viewportBottom = window.scrollY + window.innerHeight;
+      const documentBottom = document.documentElement.scrollHeight;
+
+      if (viewportBottom >= documentBottom - pageBottomOffset) {
+        nextActiveId = sections[sections.length - 1].id;
+      }
+
+      setActiveSectionId((currentId) =>
+        currentId === nextActiveId ? currentId : nextActiveId,
+      );
+    };
+
+    updateActiveSection();
+
+    const observer = new IntersectionObserver(
+      () => {
+        updateActiveSection();
       },
       {
-        threshold: 0.4,
+        threshold: [0, 0.1, 0.25, 0.5, 0.75, 1],
+        rootMargin: "-45% 0px -45% 0px",
       },
     );
 
     sections.forEach((section) => observer.observe(section));
+    window.addEventListener("scroll", updateActiveSection, { passive: true });
 
     return () => {
+      window.removeEventListener("scroll", updateActiveSection);
       sections.forEach((section) => observer.unobserve(section));
       observer.disconnect();
     };

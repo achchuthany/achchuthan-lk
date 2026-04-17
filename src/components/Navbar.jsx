@@ -9,17 +9,20 @@ const NAV_ITEMS = [
   { label: "Academic", id: "academic" },
   { label: "Projects", id: "projects" },
   { label: "Timeline", id: "timeline" },
+  { label: "Activities", id: "activities" },
   { label: "Contact", id: "contact" },
 ];
 
 function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeNavItem, setActiveNavItem] = useState("");
   const { theme, toggleTheme } = useTheme();
   const navContainerRef = useRef(null);
 
   const navIds = useMemo(() => NAV_ITEMS.map((item) => item.id), []);
   const activeSection = useScrollSpy(navIds);
+  const highlightedNavItem = activeSection || activeNavItem;
 
   useEffect(() => {
     const onScroll = () => {
@@ -67,6 +70,7 @@ function Navbar() {
 
   const handleAnchorClick = (event, id) => {
     event.preventDefault();
+    setActiveNavItem(id);
 
     const section = document.getElementById(id);
     if (section) {
@@ -77,6 +81,7 @@ function Navbar() {
 
   const handleLogoClick = (event) => {
     event.preventDefault();
+    setActiveNavItem("");
     const hero = document.getElementById("hero");
 
     if (hero) {
@@ -113,7 +118,7 @@ function Navbar() {
           className={`navbar__links ${isMenuOpen ? "navbar__links--open" : ""}`}
         >
           {NAV_ITEMS.map((item) => {
-            const isActive = activeSection === item.id;
+            const isActive = highlightedNavItem === item.id;
 
             return (
               <a

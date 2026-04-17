@@ -1,0 +1,239 @@
+[
+  {
+    "id": "conf-1",
+    "category": "conferences",
+    "title": "Containerization (Dockers and Kubernetes) & Annual NOC Meeting",
+    "organization": "Lanka Education and Research Network",
+    "location": "Information Technology Center, University of Peradeniya",
+    "date": "11-15 December 2023",
+    "description": "Workshop on containerization technologies and annual network operations meeting"
+  },
+  {
+    "id": "conf-2",
+    "category": "conferences",
+    "title": "Moodle Administration Essentials",
+    "organization": "Lanka Education and Research Network",
+    "location": "Information Technology Center, University of Peradeniya",
+    "date": "7-9 February 2023",
+    "description": "Workshop on essential Moodle administration practices"
+  },
+  {
+    "id": "conf-3",
+    "category": "conferences",
+    "title": "Identity Access Management",
+    "organization": "Lanka Education and Research Network",
+    "location": "Information Technology Center, University of Peradeniya",
+    "date": "18-20 February 2020",
+    "description": "Workshop on identity and access management systems"
+  },
+  {
+    "id": "conf-4",
+    "category": "conferences",
+    "title": "Campus Network Best Practices",
+    "organization": "Lanka Education and Research Network",
+    "location": "Information Technology Center, University of Peradeniya",
+    "date": "11-15 March 2019",
+    "description": "Workshop on best practices for campus networking"
+  },
+  {
+    "id": "conf-5",
+    "category": "conferences",
+    "title": "Federated Identity Management",
+    "organization": "Lanka Education and Research Network",
+    "location": "Faculty of Graduate Studies, General Sir John Kotelawala Defense University",
+    "date": "26-28 September 2018",
+    "description": "Workshop on federated identity management technologies"
+  },
+  {
+    "id": "conf-6",
+    "category": "conferences",
+    "title": "Network Security Workshop",
+    "organization": "Lanka Education and Research Network",
+    "location": "Information Technology Center, University of Peradeniya",
+    "date": "12-14 June 2018",
+    "description": "Workshop on network security best practices"
+  },
+  {
+    "id": "conf-7",
+    "category": "conferences",
+    "title": "World Summit Award Global Conference",
+    "organization": "World Summit Award",
+    "location": "Colombo",
+    "date": "2013",
+    "description": "Participated as student participant in global technology conference"
+  },
+  {
+    "id": "conf-8",
+    "category": "conferences",
+    "title": "Workshop on Computer Science (SL-SWCS'13)",
+    "organization": "Sri Lanka Computer Science Workshop",
+    "location": "Sri Lanka",
+    "date": "2013",
+    "description": "Presented poster on Road Traffic Alert system"
+  },
+  {
+    "id": "conf-9",
+    "category": "conferences",
+    "title": "Application Life Skills Development Workshop",
+    "organization": "99x Technologies",
+    "location": "University of Jaffna",
+    "date": "2013",
+    "description": "Workshop on life skills development in software application development"
+  },
+  {
+    "id": "conf-10",
+    "category": "conferences",
+    "title": "Career Guidance Workshop",
+    "organization": "University of Jaffna",
+    "location": "University of Jaffna",
+    "date": "2013",
+    "description": "Workshop on career guidance and professional development"
+  },
+  {
+    "id": "creative-1",
+    "category": "creative",
+    "title": "Poster for Seminar Series on Industrial Dialogue",
+    "organization": "Faculty of Management Studies and Commerce",
+    "type": "Poster",
+    "year": 2021,
+    "description": "Designed poster for industrial dialogue seminar series"
+  },
+  {
+    "id": "creative-2",
+    "category": "creative",
+    "title": "6th International Conference on Contemporary Management Materials",
+    "organization": "University of Jaffna",
+    "type": "Design",
+    "year": 2021,
+    "description": "Designed invitation cards, stage banner, poster, conference bag, proceedings cover, and certificates"
+  },
+  {
+    "id": "creative-3",
+    "category": "creative",
+    "title": "Faculty of Management Studies and Commerce Website Redesign",
+    "organization": "Faculty of Management Studies and Commerce",
+    "type": "Website",
+    "year": 2020,
+    "description": "Restructured and redesigned the official faculty website"
+  },
+  {
+    "id": "creative-4",
+    "category": "creative",
+    "title": "1st Doctorial Colloquium Materials",
+    "organization": "Faculty of Management Studies and Commerce",
+    "type": "Poster & Certificates",
+    "year": 2021,
+    "description": "Designed posters and certificates for the inaugural doctoral colloquium"
+  },
+  {
+    "id": "creative-5",
+    "category": "creative",
+    "title": "Business Incubation Cell Webinar Series Posters",
+    "organization": "Faculty of Management Studies and Commerce",
+    "type": "Poster",
+    "year": "2020-2021",
+    "description": "Designed posters for webinar series promoting business incubation"
+  },
+  {
+    "id": "creative-6",
+    "category": "creative",
+    "title": "Career Fair Poster",
+    "organization": "Faculty of Management Studies and Commerce",
+    "type": "Poster",
+    "year": 2021,
+    "description": "Designed poster for annual career fair event"
+  },
+  {
+    "id": "creative-7",
+    "category": "creative",
+    "title": "Career Guidance Webinar Poster",
+    "organization": "Career Guidance Cell",
+    "type": "Poster",
+    "year": 2020,
+    "description": "Designed poster for career guidance webinar series"
+  },
+  {
+    "id": "creative-8",
+    "category": "creative",
+    "title": "Career Fair Leaflets",
+    "organization": "Faculty of Science",
+    "type": "Leaflet",
+    "year": "2014-2015",
+    "description": "Designed leaflets for career fairs in 2014 and 2015"
+  },
+  {
+    "id": "inst-1",
+    "category": "institutional",
+    "title": "Student Information System",
+    "organization": "Faculty of Management Studies and Commerce, University of Jaffna",
+    "role": "Developer & Administrator",
+    "period": "2020 to Present",
+    "description": "Developed and administrating comprehensive student information management system"
+  },
+  {
+    "id": "inst-2",
+    "category": "institutional",
+    "title": "Student Enrollment System",
+    "organization": "University of Jaffna",
+    "role": "Developer & Administrator",
+    "period": "2020 to Present",
+    "description": "Developed and administrating student enrollment system for university admissions"
+  },
+  {
+    "id": "inst-3",
+    "category": "institutional",
+    "title": "Google for Education (G Suite)",
+    "organization": "Faculty of Management Studies and Commerce, University of Jaffna",
+    "role": "Implementation & Administrator",
+    "period": "2020 to Present",
+    "url": "https://mail.google.com/a/maco.jfn.ac.lk",
+    "description": "Implemented and administrating Google for Education suite for faculty"
+  },
+  {
+    "id": "inst-4",
+    "category": "institutional",
+    "title": "Learning Management System",
+    "organization": "Sri Lanka-German Training Institute",
+    "role": "Implementation & Administrator",
+    "period": "2017-2020",
+    "url": "https://lms.slgti.com",
+    "description": "Implemented and administrating LMS for the training institute"
+  },
+  {
+    "id": "inst-5",
+    "category": "institutional",
+    "title": "Web Server Implementation",
+    "organization": "Sri Lanka-German Training Institute",
+    "role": "Support & Implementation",
+    "period": "2017-2020",
+    "description": "Supported implementation of web server infrastructure"
+  },
+  {
+    "id": "inst-6",
+    "category": "institutional",
+    "title": "Firewall (pfSense) Implementation",
+    "organization": "Sri Lanka-German Training Institute",
+    "role": "Support & Implementation",
+    "period": "2018-2020",
+    "description": "Supported implementation and management of pfSense firewall system"
+  },
+  {
+    "id": "inst-7",
+    "category": "institutional",
+    "title": "LMS Training & Support",
+    "organization": "Sri Lanka-German Training Institute",
+    "role": "Trainer & Support",
+    "period": "2018-2020",
+    "description": "Provided training and support for LMS implementation across departments"
+  },
+  {
+    "id": "inst-8",
+    "category": "institutional",
+    "title": "Google for Education (G Suite)",
+    "organization": "Sri Lanka-German Training Institute",
+    "role": "Implementation & Administrator",
+    "period": "2018-2020",
+    "url": "https://mail.google.com/a/slgti.com",
+    "description": "Implemented and administrating Google for Education suite for the training institute"
+  }
+]

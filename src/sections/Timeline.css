@@ -46,11 +46,11 @@
   min-width: 0;
 }
 
-.timeline-entry--left .timeline-entry__card {
+.timeline-entry--left > article {
   grid-column: 1;
 }
 
-.timeline-entry--right .timeline-entry__card {
+.timeline-entry--right > article {
   grid-column: 2;
 }
 

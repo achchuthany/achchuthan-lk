@@ -2,16 +2,17 @@
   {
     "id": "edu-msc-it",
     "degree": "MSc",
-    "field": "Information Technology",
-    "institution": "University of Colombo School of Computing",
-    "year": 2021,
-    "thesis": "Scalable Web Service Architectures for Academic Information Systems"
+    "field": "Computer Science",
+    "institution": "University of Peradeniya",
+    "year": "19/05/2017– 28/12/2018",
+    "GPA": "3.35/4.0"
   },
   {
     "id": "edu-bsc-computing",
-    "degree": "BSc (Hons)",
+    "degree": "B.Sc.[Hons] Special Degree",
     "field": "Computer Science",
     "institution": "University of Jaffna",
-    "year": 2017
+    "year": "27/09/2010 – 25/04/2015",
+    "GPA": "3.17/4.0"
   }
 ]

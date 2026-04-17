@@ -1,8 +1,11 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { Mail } from "lucide-react";
 import SectionHeading from "../components/SectionHeading";
 import profile from "../data/profile.json";
 import "./Contact.css";
+
+const MotionSection = motion.section;
 
 function GitHubIcon() {
   return (
@@ -40,11 +43,21 @@ function Contact() {
   };
 
   return (
-    <section id="contact" className="contact-section">
+    <MotionSection
+      id="contact"
+      className="contact-section"
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.15 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+    >
       <div className="contact-grid">
         <div className="contact-copy">
           <div className="contact-heading">
-            <SectionHeading title="Get in touch" />
+            <SectionHeading
+              label="Contact"
+              title="Get in touch"
+            />
           </div>
           <p className="contact-description">
             Open to teaching collaborations, freelance web projects, and
@@ -136,7 +149,7 @@ function Contact() {
           {isSubmitted && <p className="contact-confirmation">Message sent!</p>}
         </form>
       </div>
-    </section>
+    </MotionSection>
   );
 }
 

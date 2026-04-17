@@ -142,11 +142,12 @@ function Academic() {
                 {item.degree} in {item.field}
               </h4>
               <p className="academic-education-meta">
-                {item.institution} · {item.year}
+                {item.institution} · {item.year} · GPA: {item.GPA}
               </p>
               {item.thesis && (
                 <p className="academic-education-thesis">{item.thesis}</p>
               )}
+               
             </MotionArticle>
           ))}
         </MotionDiv>
@@ -155,9 +156,9 @@ function Academic() {
       <div className="academic-subsection">
         <h3 className="academic-subtitle">Research & Publications</h3>
 
-        <div className="academic-filter-row">
+        {/* <div className="academic-filter-row">
           <FilterTabs tabs={FILTERS} active={filter} onChange={setFilter} />
-        </div>
+        </div> */}
 
         <MotionDiv
           className="academic-publications-list"

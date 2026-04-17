@@ -67,7 +67,10 @@ function Projects() {
       transition={{ duration: 0.5, ease: "easeOut" }}
     >
       <div className="projects-header">
-        <SectionHeading title="Projects" />
+        <SectionHeading
+          label="Projects"
+          title="Systems and products built for education and operations."
+        />
 
         <div className="projects-filter-row">
           <FilterTabs tabs={FILTERS} active={filter} onChange={setFilter} />

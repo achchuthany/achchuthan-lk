@@ -7,6 +7,7 @@ import SectionHeading from "../components/SectionHeading";
 import timeline from "../data/timeline.json";
 import "./Timeline.css";
 
+const MotionSection = motion.section;
 const MotionArticle = motion.article;
 
 const FILTERS = ["Show All", "Academic only", "Software only"];
@@ -28,9 +29,19 @@ function Timeline() {
         );
 
   return (
-    <section id="timeline" className="timeline-section">
+    <MotionSection
+      id="timeline"
+      className="timeline-section"
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.15 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+    >
       <div className="timeline-header">
-        <SectionHeading title="Timeline" />
+        <SectionHeading
+          label="Timeline"
+          title="Experience across teaching and software roles."
+        />
 
         <div className="timeline-filter-row">
           <FilterTabs tabs={FILTERS} active={filter} onChange={setFilter} />
@@ -87,7 +98,7 @@ function Timeline() {
           );
         })}
       </div>
-    </section>
+    </MotionSection>
   );
 }
 

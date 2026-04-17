@@ -1,20 +1,56 @@
 [
   {
-    "id": "role-program-coordinator",
-    "role": "Program Coordinator",
-    "department": "Department of Computer Technology",
-    "institution": "University College of Jaffna",
-    "from": "2023-01",
-    "to": "2025-06",
-    "current": false
-  },
-  {
-    "id": "role-lms-committee",
-    "role": "LMS and Digital Learning Committee Member",
-    "department": "Faculty ICT Development Unit",
-    "institution": "University College of Jaffna",
-    "from": "2025-07",
+    "id": "role-lms-admin",
+    "role": "LMS Administrator",
+    "department": "Centre for Open and Distance Learning (CODL)",
+    "institution": "University of Jaffna",
+    "from": "2025",
     "to": "Present",
     "current": true
+  },
+  {
+    "id": "role-faculty-board",
+    "role": "Member",
+    "department": "Management Studies and Commerce Faculty Board",
+    "institution": "University of Jaffna",
+    "from": "2020",
+    "to": "Present",
+    "current": true
+  },
+  {
+    "id": "role-digital-transform",
+    "role": "Member",
+    "department": "Management Studies and Commerce Faculty Digital Transformation Committee",
+    "institution": "University of Jaffna",
+    "from": "2020",
+    "to": "Present",
+    "current": true
+  },
+  {
+    "id": "role-cssl",
+    "role": "Member",
+    "department": "Computer Society of Sri Lanka",
+    "institution": "Computer Society of Sri Lanka",
+    "from": "2018",
+    "to": "Present",
+    "current": true
+  },
+  {
+    "id": "role-tech-eval",
+    "role": "Member",
+    "department": "Technical Evaluation Committee",
+    "institution": "Sri Lanka-German Training Institute",
+    "from": "2017",
+    "to": "2020",
+    "current": false
+  },
+   {
+    "id": "role-lms-committee",
+    "role": "Head of the Department",
+    "department": "Department of Information and Communication Technology",
+    "institution": "Sri Lanka-German Training Institute (SLGTI)",
+    "from": "03/07/2017",
+    "to": "01/07/2020",
+    "current": false
   }
 ]

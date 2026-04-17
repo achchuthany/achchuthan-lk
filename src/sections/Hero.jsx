@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import profile from "../data/profile.json";
 import "./Hero.css";
 
+const MotionSection = motion.section;
 const MotionDiv = motion.div;
 
 function Hero() {
@@ -15,7 +16,7 @@ function Hero() {
   };
 
   return (
-    <section id="hero" className="hero-section">
+    <MotionSection id="hero" className="hero-section">
       <MotionDiv
         className="hero-content"
         initial={{ opacity: 0, y: 24 }}
@@ -54,7 +55,7 @@ function Hero() {
           )}
         </div>
       </MotionDiv>
-    </section>
+    </MotionSection>
   );
 }
 

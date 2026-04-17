@@ -1,42 +1,52 @@
 [
   {
-    "id": "timeline-lecturer-2022",
-    "role": "Lecturer (Computer Technology)",
-    "org": "University College of Jaffna",
-    "from": "2022-01",
+    "id": "timeline-instructor-computer-tech",
+    "role": "Instructor in Computer Technology Grade II",
+    "org": "Faculty of Management Studies and Commerce, University of Jaffna",
+    "from": "2020-09-21",
     "to": "Present",
     "current": true,
-    "description": "Teaching core undergraduate modules, supervising final-year projects, and coordinating curriculum updates for emerging technologies.",
+    "description": "Teaching undergraduate courses in computer technology and supporting academic initiatives.",
     "track": "academic"
   },
   {
-    "id": "timeline-freelance-dev-2021",
-    "role": "Part-Time Full-Stack Developer",
-    "org": "Independent Client Projects",
-    "from": "2021-03",
-    "to": "Present",
-    "current": true,
-    "description": "Designing and delivering Laravel, MERN, and React Native solutions for local businesses and education-sector clients.",
-    "track": "software"
-  },
-  {
-    "id": "timeline-assistant-lecturer-2018",
-    "role": "Assistant Lecturer",
-    "org": "University of Jaffna",
-    "from": "2018-06",
-    "to": "2021-12",
+    "id": "timeline-head-dept-slgti",
+    "role": "Head of Department",
+    "org": "Department of Information and Communication Technology, Sri Lanka-German Training Institute",
+    "from": "2017-07-03",
+    "to": "2020-07-01",
     "current": false,
-    "description": "Conducted practical labs in networking and databases while assisting module planning and student mentoring.",
+    "description": "Led the department operations, curriculum development, and staff coordination.",
     "track": "academic"
   },
   {
-    "id": "timeline-junior-dev-2017",
-    "role": "Junior Web Developer",
-    "org": "Northern Digital Solutions",
-    "from": "2017-01",
-    "to": "2018-05",
+    "id": "timeline-lecturer-slgti",
+    "role": "Lecturer Gr-II",
+    "org": "Department of Information and Communication Technology, Sri Lanka-German Training Institute",
+    "from": "2016-05-31",
+    "to": "2020-09-18",
     "current": false,
-    "description": "Built and maintained PHP-based web portals, integrated MySQL databases, and supported production deployments on Linux servers.",
+    "description": "Conducted lectures and practical sessions in information and communication technology.",
+    "track": "academic"
+  },
+  {
+    "id": "timeline-temp-instructor-uoj",
+    "role": "Temporary Instructor",
+    "org": "Department of Computer Science, University of Jaffna",
+    "from": "2015-11-23",
+    "to": "2016-03-11",
+    "current": false,
+    "description": "Taught introductory computer science courses and laboratory sessions.",
+    "track": "academic"
+  },
+  {
+    "id": "timeline-trainee-99x",
+    "role": "Trainee Software Engineer",
+    "org": "99x Technology, Colombo",
+    "from": "2015-05-07",
+    "to": "2015-11-06",
+    "current": false,
+    "description": "Trained in software development practices and assisted in application development projects.",
     "track": "software"
   }
 ]

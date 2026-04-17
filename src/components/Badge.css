@@ -26,6 +26,11 @@
   color: #f97316;
 }
 
+.badge--creative {
+  background: rgba(139, 92, 246, 0.12);
+  color: #8b5cf6;
+}
+
 .badge--expert {
   background: rgba(22, 163, 74, 0.12);
   color: #15803d;

@@ -1,7 +1,10 @@
+import { motion } from "framer-motion";
 import Badge from "../components/Badge";
 import SectionHeading from "../components/SectionHeading";
 import stack from "../data/stack.json";
 import "./Stack.css";
+
+const MotionSection = motion.section;
 
 const STACK_COLUMNS = [
   { key: "backend", label: "Backend" },
@@ -12,10 +15,20 @@ const STACK_COLUMNS = [
 
 function Stack() {
   return (
-    <section id="stack" className="stack-section">
+    <MotionSection
+      id="stack"
+      className="stack-section"
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.15 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+    >
       <div className="stack-section__inner">
         <div className="stack-section__heading">
-          <SectionHeading title="Technical skills" />
+          <SectionHeading
+            label="Stack"
+            title="Technical skills"
+          />
         </div>
 
         <div className="stack-section__grid">
@@ -42,7 +55,7 @@ function Stack() {
           ))}
         </div>
       </div>
-    </section>
+    </MotionSection>
   );
 }
 

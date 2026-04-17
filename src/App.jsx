@@ -2,10 +2,12 @@ import { AnimatePresence } from "framer-motion";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import ScrollProgress from "./components/ScrollProgress";
 import SEOHead from "./components/SEOHead";
 import profile from "./data/profile.json";
 import Academic from "./sections/Academic";
 import About from "./sections/About";
+import Activities from "./sections/Activities";
 import Contact from "./sections/Contact";
 import Hero from "./sections/Hero";
 import Projects from "./sections/Projects";
@@ -20,6 +22,7 @@ function App() {
   return (
     <>
       <SEOHead title={seoTitle} description={seoDescription} />
+      <ScrollProgress />
       <Navbar />
       <AnimatePresence mode="wait" initial={false}>
         <main key="single-page-layout" className="app-main">
@@ -29,6 +32,7 @@ function App() {
           <Projects />
           <Stack />
           <Timeline />
+          <Activities />
           <Contact />
           <Footer />
         </main>

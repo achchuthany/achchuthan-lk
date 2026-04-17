@@ -1,39 +1,14 @@
 [
   {
     "id": "pub-smart-campus-iot-2023",
-    "title": "A Lightweight IoT Monitoring Framework for Smart Campus Infrastructure",
-    "journal": "International Journal of Emerging Computing Systems",
-    "year": 2023,
+    "title": "Language localisation of Tamil using Statistical Machine Translation",
+    "journal": "2015 Fifteenth International Conference on Advances in ICT for Emerging Regions (ICTer)",
+    "year": 2015,
     "authors": [
       "Yogarajah Achchuthan",
-      "S. Nadarajah",
-      "P. Mahendran"
+      "Kengatharaiyer Sarveswaran"
     ],
-    "doi": "10.5555/ijecs.2023.1042",
-    "type": "journal"
-  },
-  {
-    "id": "pub-elearning-analytics-2024",
-    "title": "Learning Analytics Dashboard Design for Blended Higher Education in Sri Lanka",
-    "journal": "Proceedings of the South Asian Conference on ICT in Education",
-    "year": 2024,
-    "authors": [
-      "Y. Achchuthan",
-      "K. Thusyanthini"
-    ],
-    "doi": "10.5555/sacicte.2024.221",
+    "doi": "https://doi.org/10.1109/ICTER.2015.7377677",
     "type": "conference"
-  },
-  {
-    "id": "pub-k8s-labs-2022",
-    "title": "Containerized Lab Environments for Undergraduate Networking Courses",
-    "journal": "Journal of Computing Education and Practice",
-    "year": 2022,
-    "authors": [
-      "Yogarajah Achchuthan",
-      "R. Tharmalingam"
-    ],
-    "doi": "10.5555/jcep.2022.879",
-    "type": "journal"
   }
 ]
