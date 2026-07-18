@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { Code2, Cpu, Layers, Server, Smartphone } from "lucide-react";
 import Badge from "../components/Badge";
 import FilterTabs from "../components/FilterTabs";
 import SectionHeading from "../components/SectionHeading";
@@ -9,10 +10,10 @@ import "./Stack.css";
 const MotionSection = motion.section;
 
 const STACK_COLUMNS = [
-  { key: "backend", label: "Backend" },
-  { key: "frontend", label: "Frontend" },
-  { key: "mobile", label: "Mobile" },
-  { key: "infrastructure", label: "Infrastructure" },
+  { key: "backend", label: "Backend", icon: Server },
+  { key: "frontend", label: "Frontend", icon: Code2 },
+  { key: "mobile", label: "Mobile", icon: Smartphone },
+  { key: "infrastructure", label: "Infrastructure", icon: Cpu },
 ];
 
 const FILTERS = ["All", ...STACK_COLUMNS.map((column) => column.label)];
@@ -36,7 +37,11 @@ function Stack() {
     >
       <div className="stack-section__inner">
         <div className="stack-section__heading">
-          <SectionHeading label="Skills" title="Technical stack" />
+          <SectionHeading
+            icon={Layers}
+            label="Skills"
+            title="Technical stack"
+          />
 
           <div className="stack-section__filter">
             <FilterTabs tabs={FILTERS} active={filter} onChange={setFilter} />
@@ -44,29 +49,40 @@ function Stack() {
         </div>
 
         <div className="stack-section__grid">
-          {visibleColumns.map((column) => (
-            <div key={column.key} className="stack-column">
-              <p className="stack-column__label">{column.label}</p>
+          {visibleColumns.map((column) => {
+            const ColumnIcon = column.icon;
 
-              <div className="stack-column__list">
-                {stack[column.key].map((skill) => (
-                  <div key={skill.name} className="stack-skill">
-                    <div className="stack-skill__top">
-                      <span className="stack-skill__meta">
-                        <span className="stack-skill__name">{skill.name}</span>
-                        <span className="stack-skill__years">
-                          {skill.years} yrs
+            return (
+              <div key={column.key} className="stack-column">
+                <p className="stack-column__label">
+                  <span className="stack-column__icon" aria-hidden="true">
+                    <ColumnIcon size={16} strokeWidth={2} />
+                  </span>
+                  {column.label}
+                </p>
+
+                <div className="stack-column__list">
+                  {stack[column.key].map((skill) => (
+                    <div key={skill.name} className="stack-skill">
+                      <div className="stack-skill__top">
+                        <span className="stack-skill__meta">
+                          <span className="stack-skill__name">
+                            {skill.name}
+                          </span>
+                          <span className="stack-skill__years">
+                            {skill.years} yrs
+                          </span>
                         </span>
-                      </span>
-                      <Badge variant={skill.level}>
-                        {skill.level === "expert" ? "Expert" : "Proficient"}
-                      </Badge>
+                        <Badge variant={skill.level}>
+                          {skill.level === "expert" ? "Expert" : "Proficient"}
+                        </Badge>
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </MotionSection>

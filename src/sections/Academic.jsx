@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, GraduationCap } from "lucide-react";
 import Badge from "../components/Badge";
 import Card from "../components/Card";
 import FilterTabs from "../components/FilterTabs";
@@ -76,6 +76,7 @@ function Academic() {
     >
       <div className="academic-header">
         <SectionHeading
+          icon={GraduationCap}
           label="Academic"
           title="Teaching, education, and research output."
         />

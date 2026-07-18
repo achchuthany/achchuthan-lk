@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Sparkles } from "lucide-react";
 import Card from "../components/Card";
 import SectionHeading from "../components/SectionHeading";
 import profile from "../data/profile.json";
@@ -47,6 +48,7 @@ function About() {
     >
       <div className="about-heading-wrap">
         <SectionHeading
+          icon={Sparkles}
           label="About me"
           title="Teaching, building, and shipping practical systems."
         />

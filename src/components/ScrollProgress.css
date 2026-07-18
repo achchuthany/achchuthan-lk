@@ -14,7 +14,7 @@
   width: 100%;
   transform-origin: left center;
   transform: scaleX(0);
-  background: linear-gradient(90deg, #2563eb 0%, #0ea5e9 100%);
+  background: var(--gradient-accent);
   transition: transform 0.08s linear;
 }
 
@@ -53,15 +53,13 @@
 
 .back-to-top:hover {
   color: var(--color-accent);
+  border-color: var(--accent-border);
+  transform: translateY(-2px);
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) .scroll-progress {
     background: rgba(255, 255, 255, 0.08);
-  }
-
-  :root:not([data-theme="light"]) .scroll-progress__bar {
-    background: linear-gradient(90deg, #60a5fa 0%, #22d3ee 100%);
   }
 
   :root:not([data-theme="light"]) .back-to-top {
@@ -71,10 +69,6 @@
 
 :root[data-theme="dark"] .scroll-progress {
   background: rgba(255, 255, 255, 0.08);
-}
-
-:root[data-theme="dark"] .scroll-progress__bar {
-  background: linear-gradient(90deg, #60a5fa 0%, #22d3ee 100%);
 }
 
 :root[data-theme="dark"] .back-to-top {

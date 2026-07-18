@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { Briefcase } from "lucide-react";
 import Badge from "../components/Badge";
 import Card from "../components/Card";
 import FilterTabs from "../components/FilterTabs";
@@ -36,6 +37,7 @@ function Timeline() {
     >
       <div className="timeline-header">
         <SectionHeading
+          icon={Briefcase}
           label="Timeline"
           title="Experience across teaching and software roles."
         />

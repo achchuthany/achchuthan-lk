@@ -22,7 +22,7 @@ function Navbar() {
 
   useEffect(() => {
     const onScroll = () => {
-      setIsScrolled(window.scrollY > 60);
+      setIsScrolled(window.scrollY > 12);
     };
 
     onScroll();
@@ -72,7 +72,8 @@ function Navbar() {
     >
       <div className="navbar__inner" ref={navContainerRef}>
         <Link to="/" className="navbar__logo" onClick={closeMenu}>
-          Achchuthan
+          <img className="navbar__logo-mark" src="/favicon.svg" alt="" />
+          <span className="navbar__logo-text">Achchuthan</span>
         </Link>
 
         <button
@@ -113,8 +114,8 @@ function Navbar() {
             <span className="navbar__theme-icon">
               {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
             </span>
-            <span>
-              {theme === "dark" ? "Switch to Light Mode" : "Switch to Dark Mode"}
+            <span className="navbar__theme-text">
+              {theme === "dark" ? "Light mode" : "Dark mode"}
             </span>
           </button>
         </nav>

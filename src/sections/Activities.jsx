@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { Sparkles } from "lucide-react";
 import Badge from "../components/Badge";
 import FilterTabs from "../components/FilterTabs";
 import SectionHeading from "../components/SectionHeading";
@@ -70,6 +71,7 @@ function Activities() {
     >
       <div className="activities-header">
         <SectionHeading
+          icon={Sparkles}
           label="Activities"
           title="Conferences, creative output, and institutional work."
         />
