@@ -16,7 +16,7 @@ function NotFoundPage() {
         <p className="notfound__text">
           The link may be broken or the page may have moved.
         </p>
-        <Link className="notfound__link" to="/">
+        <Link className="btn btn--primary" to="/">
           Back to home
         </Link>
       </section>

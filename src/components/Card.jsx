@@ -4,7 +4,9 @@ import "./Card.css";
 const MotionDiv = motion.div;
 
 function Card({ children, hover = true, className = "" }) {
-  const classes = ["card", className].filter(Boolean).join(" ");
+  const classes = ["card", hover ? "card--interactive" : "", className]
+    .filter(Boolean)
+    .join(" ");
 
   if (!hover) {
     return <div className={classes}>{children}</div>;
@@ -13,7 +15,7 @@ function Card({ children, hover = true, className = "" }) {
   return (
     <MotionDiv
       className={classes}
-      whileHover={{ scale: 1.015, borderColor: "#aaa" }}
+      whileHover={{ y: -4 }}
       transition={{ duration: 0.2, ease: "easeOut" }}
     >
       {children}

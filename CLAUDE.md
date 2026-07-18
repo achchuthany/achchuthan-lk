@@ -94,6 +94,22 @@ navigation is now route-based, not scroll-based.
   (`:root[data-theme="light"|"dark"]`). Never hardcode colors — use the
   `--color-*` tokens (with `--text`, `--bg`, `--accent` compatibility
   aliases).
+- **Design system (`src/index.css`):** the accent is an indigo-violet
+  (`--color-accent` / `--color-accent-solid` / `--gradient-accent`). Type
+  uses two families — `--font-display` (Space Grotesk, applied to `h1`–`h4`)
+  and `--font-sans` (Inter, body); both are loaded from Google Fonts in
+  `index.html`. Shape and rhythm come from token scales: `--radius-sm/…/-pill`,
+  `--space-1`…`--space-8`, `--section-y` (clamped section padding), and
+  `--shadow-sm/-/-lg/-accent`. Use these tokens rather than magic numbers.
+  A reusable button system lives here too: `.btn` + `.btn--primary`
+  (gradient, pill), `.btn--ghost`, `.btn--block` — reuse it for any button or
+  link-as-button instead of bespoke per-section button CSS.
+- **Icons:** `lucide-react` is the icon set. Note the pinned `1.8.0` does
+  **not** export brand icons (Github/Linkedin) — keep the inline brand SVGs
+  in `About.jsx`/`Contact.jsx` for those. `SectionHeading` takes an `icon`
+  prop (a Lucide component) that renders the eyebrow chip; every section
+  passes one. The brand mark is `public/favicon.svg` (the "A" logo), reused
+  via `<img src="/favicon.svg">` in the navbar and footer.
 - **SEO:** `SEOHead.jsx` imperatively upserts `<title>`, meta description,
   Open Graph tags, and the canonical link whenever its props change. Each
   page passes its entry from `src/pages/pageMeta.js`, so the title and

@@ -1,5 +1,5 @@
 .projects-section {
-  padding: 56px 0 88px;
+  padding: var(--section-y) 0;
   overflow-x: clip;
 }
 

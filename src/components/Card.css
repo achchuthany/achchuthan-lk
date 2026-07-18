@@ -1,9 +1,19 @@
 .card {
   min-width: 0;
   max-width: 100%;
-  background: #ffffff;
-  border: 0.5px solid #e5e5e5;
-  border-radius: 12px;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition:
+    box-shadow 0.22s ease,
+    border-color 0.22s ease,
+    transform 0.22s ease;
+}
+
+.card--interactive:hover {
+  border-color: var(--accent-border);
+  box-shadow: var(--shadow-lg);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -12,4 +22,9 @@
     background: var(--color-surface);
     border-color: var(--color-border);
   }
+}
+
+:root[data-theme="dark"] .card {
+  background: var(--color-surface);
+  border-color: var(--color-border);
 }

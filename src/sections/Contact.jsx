@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail } from "lucide-react";
+import { Mail, Send } from "lucide-react";
 import SectionHeading from "../components/SectionHeading";
 import profile from "../data/profile.json";
 import "./Contact.css";
@@ -55,6 +55,7 @@ function Contact() {
         <div className="contact-copy">
           <div className="contact-heading">
             <SectionHeading
+              icon={Mail}
               label="Contact"
               title="Get in touch"
             />
@@ -142,7 +143,8 @@ function Contact() {
             ></textarea>
           </label>
 
-          <button className="contact-submit" type="submit">
+          <button className="btn btn--primary btn--block" type="submit">
+            <Send size={17} aria-hidden="true" />
             Send message
           </button>
 

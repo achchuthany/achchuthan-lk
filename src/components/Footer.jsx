@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./Footer.css";
 
 function Footer() {
@@ -6,9 +7,16 @@ function Footer() {
 
   return (
     <footer className="footer">
-      <p className="footer__line">
-        Copyright {currentYear} Yogarajah Achchuthan · v{buildNumber}
-      </p>
+      <div className="footer__inner">
+        <Link to="/" className="footer__brand">
+          <img className="footer__mark" src="/favicon.svg" alt="" />
+          <span className="footer__name">Yogarajah Achchuthan</span>
+        </Link>
+
+        <p className="footer__line">
+          © {currentYear} Yogarajah Achchuthan · v{buildNumber}
+        </p>
+      </div>
     </footer>
   );
 }

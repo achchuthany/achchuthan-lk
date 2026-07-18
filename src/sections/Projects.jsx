@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ExternalLink, FileText } from "lucide-react";
+import { ExternalLink, FileText, Rocket } from "lucide-react";
 import Badge from "../components/Badge";
 import Card from "../components/Card";
 import FilterTabs from "../components/FilterTabs";
@@ -66,6 +66,7 @@ function Projects() {
     >
       <div className="projects-header">
         <SectionHeading
+          icon={Rocket}
           label="Projects"
           title="Systems and products built for education and operations."
         />
