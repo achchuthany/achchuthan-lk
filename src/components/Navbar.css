@@ -138,6 +138,33 @@
   display: none;
 }
 
+/* Full-screen tap target that closes the mobile menu. Sits below the navbar
+   (z-index 1000) so the open menu stays interactive, but above page content.
+   Avoids fragile document touchstart listeners that misfire on iOS Safari. */
+.navbar__backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  background: rgba(10, 10, 20, 0.4);
+  animation: navbar-backdrop-in 0.2s ease;
+}
+
+@keyframes navbar-backdrop-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 639px) {
+  .navbar__backdrop {
+    display: block;
+  }
+}
+
 @media (max-width: 639px) {
   .navbar__inner {
     min-height: 60px;
