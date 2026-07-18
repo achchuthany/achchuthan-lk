@@ -1,7 +1,6 @@
 .timeline-section {
-  padding: 100px 0;
+  padding: 56px 0 88px;
   overflow-x: clip;
-  border-bottom: 1px solid var(--color-border);
 }
 
 .timeline-header {

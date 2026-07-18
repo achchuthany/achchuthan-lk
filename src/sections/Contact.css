@@ -1,5 +1,5 @@
 .contact-section {
-  padding: 100px 0 60px;
+  padding: 56px 0 88px;
   overflow-x: clip;
 }
 
@@ -111,8 +111,9 @@
 .contact-input:focus,
 .contact-select:focus,
 .contact-textarea:focus {
-  border-color: #111111;
+  border-color: var(--color-accent);
   outline: none;
+  box-shadow: 0 0 0 3px var(--accent-bg);
 }
 
 .contact-submit {
@@ -121,14 +122,16 @@
   border: none;
   border-radius: 8px;
   padding: 12px;
-  background: #111111;
+  background: var(--color-accent);
   color: #ffffff;
   font-size: 14px;
+  font-weight: 500;
   cursor: pointer;
+  transition: opacity 0.2s ease;
 }
 
 .contact-submit:hover {
-  opacity: 0.95;
+  opacity: 0.92;
 }
 
 .contact-confirmation {
