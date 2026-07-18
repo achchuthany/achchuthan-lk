@@ -1,28 +1,24 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Menu, Moon, Sun, X } from "lucide-react";
-import useScrollSpy from "../hooks/useScrollSpy";
+import { Link, NavLink } from "react-router-dom";
 import useTheme from "../hooks/useTheme";
 import "./Navbar.css";
 
 const NAV_ITEMS = [
-  { label: "About", id: "about" },
-  { label: "Academic", id: "academic" },
-  { label: "Projects", id: "projects" },
-  { label: "Timeline", id: "timeline" },
-  { label: "Activities", id: "activities" },
-  { label: "Contact", id: "contact" },
+  { label: "Home", to: "/", end: true },
+  { label: "Academic", to: "/academic" },
+  { label: "Projects", to: "/projects" },
+  { label: "Skills", to: "/skills" },
+  { label: "Timeline", to: "/timeline" },
+  { label: "Activities", to: "/activities" },
+  { label: "Contact", to: "/contact" },
 ];
 
 function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeNavItem, setActiveNavItem] = useState("");
   const { theme, toggleTheme } = useTheme();
   const navContainerRef = useRef(null);
-
-  const navIds = useMemo(() => NAV_ITEMS.map((item) => item.id), []);
-  const activeSection = useScrollSpy(navIds);
-  const highlightedNavItem = activeSection || activeNavItem;
 
   useEffect(() => {
     const onScroll = () => {
@@ -68,39 +64,16 @@ function Navbar() {
     };
   }, [isMenuOpen]);
 
-  const handleAnchorClick = (event, id) => {
-    event.preventDefault();
-    setActiveNavItem(id);
-
-    const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth", block: "start" });
-      setIsMenuOpen(false);
-    }
-  };
-
-  const handleLogoClick = (event) => {
-    event.preventDefault();
-    setActiveNavItem("");
-    const hero = document.getElementById("hero");
-
-    if (hero) {
-      hero.scrollIntoView({ behavior: "smooth", block: "start" });
-    } else {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-
-    setIsMenuOpen(false);
-  };
+  const closeMenu = () => setIsMenuOpen(false);
 
   return (
     <header
       className={`navbar ${isScrolled ? "navbar--scrolled" : "navbar--top"}`}
     >
       <div className="navbar__inner" ref={navContainerRef}>
-        <a href="#hero" className="navbar__logo" onClick={handleLogoClick}>
+        <Link to="/" className="navbar__logo" onClick={closeMenu}>
           Achchuthan
-        </a>
+        </Link>
 
         <button
           type="button"
@@ -117,20 +90,19 @@ function Navbar() {
         <nav
           className={`navbar__links ${isMenuOpen ? "navbar__links--open" : ""}`}
         >
-          {NAV_ITEMS.map((item) => {
-            const isActive = highlightedNavItem === item.id;
-
-            return (
-              <a
-                key={item.id}
-                href={`#${item.id}`}
-                onClick={(event) => handleAnchorClick(event, item.id)}
-                className={`navbar__link ${isActive ? "navbar__link--active" : ""}`}
-              >
-                {item.label}
-              </a>
-            );
-          })}
+          {NAV_ITEMS.map((item) => (
+            <NavLink
+              key={item.to}
+              to={item.to}
+              end={item.end}
+              onClick={closeMenu}
+              className={({ isActive }) =>
+                `navbar__link ${isActive ? "navbar__link--active" : ""}`
+              }
+            >
+              {item.label}
+            </NavLink>
+          ))}
 
           <button
             type="button"
@@ -141,7 +113,9 @@ function Navbar() {
             <span className="navbar__theme-icon">
               {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
             </span>
-            <span>{theme === "dark" ? "Switch to Light Mode" : "Switch to Dark Mode"}</span>
+            <span>
+              {theme === "dark" ? "Switch to Light Mode" : "Switch to Dark Mode"}
+            </span>
           </button>
         </nav>
       </div>

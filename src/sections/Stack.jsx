@@ -1,5 +1,7 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import Badge from "../components/Badge";
+import FilterTabs from "../components/FilterTabs";
 import SectionHeading from "../components/SectionHeading";
 import stack from "../data/stack.json";
 import "./Stack.css";
@@ -13,7 +15,16 @@ const STACK_COLUMNS = [
   { key: "infrastructure", label: "Infrastructure" },
 ];
 
+const FILTERS = ["All", ...STACK_COLUMNS.map((column) => column.label)];
+
 function Stack() {
+  const [filter, setFilter] = useState("All");
+
+  const visibleColumns =
+    filter === "All"
+      ? STACK_COLUMNS
+      : STACK_COLUMNS.filter((column) => column.label === filter);
+
   return (
     <MotionSection
       id="stack"
@@ -25,14 +36,15 @@ function Stack() {
     >
       <div className="stack-section__inner">
         <div className="stack-section__heading">
-          <SectionHeading
-            label="Stack"
-            title="Technical skills"
-          />
+          <SectionHeading label="Skills" title="Technical stack" />
+
+          <div className="stack-section__filter">
+            <FilterTabs tabs={FILTERS} active={filter} onChange={setFilter} />
+          </div>
         </div>
 
         <div className="stack-section__grid">
-          {STACK_COLUMNS.map((column) => (
+          {visibleColumns.map((column) => (
             <div key={column.key} className="stack-column">
               <p className="stack-column__label">{column.label}</p>
 
@@ -42,7 +54,9 @@ function Stack() {
                     <div className="stack-skill__top">
                       <span className="stack-skill__meta">
                         <span className="stack-skill__name">{skill.name}</span>
-                        <span className="stack-skill__years">{skill.years} yrs</span>
+                        <span className="stack-skill__years">
+                          {skill.years} yrs
+                        </span>
                       </span>
                       <Badge variant={skill.level}>
                         {skill.level === "expert" ? "Expert" : "Proficient"}

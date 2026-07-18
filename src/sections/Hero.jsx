@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import profile from "../data/profile.json";
 import "./Hero.css";
 
@@ -6,15 +7,6 @@ const MotionSection = motion.section;
 const MotionDiv = motion.div;
 
 function Hero() {
-  const scrollToSection = (id) => {
-    const target = document.getElementById(id);
-    if (!target) {
-      return;
-    }
-
-    target.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
-
   return (
     <MotionSection id="hero" className="hero-section">
       <MotionDiv
@@ -28,21 +20,13 @@ function Hero() {
         <p className="hero-tagline">{profile.tagline}</p>
 
         <div className="hero-cta-row">
-          <button
-            type="button"
-            className="hero-cta"
-            onClick={() => scrollToSection("academic")}
-          >
+          <Link to="/academic" className="hero-cta hero-cta--primary">
             View academic work
-          </button>
+          </Link>
 
-          <button
-            type="button"
-            className="hero-cta"
-            onClick={() => scrollToSection("projects")}
-          >
+          <Link to="/projects" className="hero-cta">
             See projects
-          </button>
+          </Link>
         </div>
 
         <div className="hero-meta">
