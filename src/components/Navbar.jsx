@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Menu, Moon, Sun, X } from "lucide-react";
 import { Link, NavLink } from "react-router-dom";
 import useTheme from "../hooks/useTheme";
@@ -14,10 +14,17 @@ const NAV_ITEMS = [
   { label: "Contact", to: "/contact" },
 ];
 
+// iOS Safari can dispatch a duplicate `click` on a button whose contents change
+// mid-tap (the toggle swaps its ☰/✕ icon on open). That phantom second click
+// would instantly reverse the menu, so it opened and closed in one tap. Ignore
+// any menu state change that fires within this window of the previous one.
+const TAP_GUARD_MS = 400;
+
 function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
+  const lastChangeRef = useRef(0);
 
   useEffect(() => {
     const onScroll = () => {
@@ -59,6 +66,26 @@ function Navbar() {
     return () => document.removeEventListener("keydown", onKeyDown);
   }, [isMenuOpen]);
 
+  // Toggle guarded against iOS Safari's duplicate click firing.
+  const handleToggle = () => {
+    if (Date.now() - lastChangeRef.current < TAP_GUARD_MS) {
+      return;
+    }
+    lastChangeRef.current = Date.now();
+    setIsMenuOpen((open) => !open);
+  };
+
+  // Outside/backdrop close, also guarded so a phantom event right after opening
+  // can't immediately dismiss the menu.
+  const closeFromBackdrop = () => {
+    if (Date.now() - lastChangeRef.current < TAP_GUARD_MS) {
+      return;
+    }
+    setIsMenuOpen(false);
+  };
+
+  // Intentional close (nav link / logo) — always closes so navigation feels
+  // immediate.
   const closeMenu = () => setIsMenuOpen(false);
 
   return (
@@ -79,7 +106,7 @@ function Navbar() {
               isMenuOpen ? "Close navigation menu" : "Open navigation menu"
             }
             aria-expanded={isMenuOpen}
-            onClick={() => setIsMenuOpen((open) => !open)}
+            onClick={handleToggle}
           >
             {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
@@ -122,7 +149,7 @@ function Navbar() {
         <div
           className="navbar__backdrop"
           aria-hidden="true"
-          onClick={closeMenu}
+          onClick={closeFromBackdrop}
         ></div>
       )}
     </>

@@ -74,6 +74,9 @@
   padding: 10px;
   line-height: 0;
   border-radius: var(--radius-sm);
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
 }
 
 .navbar__links {
