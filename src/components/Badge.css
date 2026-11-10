@@ -37,17 +37,14 @@
   color: #15803d;
 }
 
-.badge--proficient {
-  background: rgba(15, 23, 42, 0.08);
-  color: var(--color-text);
+/* Brand accent (blue) to set it apart from Expert's green. Built from the
+   accent token, so it adapts to light/dark without per-theme overrides. */
+.badge--professional {
+  background: color-mix(in srgb, var(--color-accent) 14%, transparent);
+  color: var(--color-accent-strong);
 }
 
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .badge--proficient,
-  :root[data-theme="dark"] .badge--proficient {
-    background: rgba(255, 255, 255, 0.08);
-  }
-
   :root:not([data-theme="light"]) .badge--academic,
   :root[data-theme="dark"] .badge--academic {
     background: rgba(96, 165, 250, 0.16);

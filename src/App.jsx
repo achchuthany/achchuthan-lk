@@ -6,6 +6,7 @@ import ActivitiesPage from "./pages/ActivitiesPage";
 import ContactPage from "./pages/ContactPage";
 import HomePage from "./pages/HomePage";
 import NotFoundPage from "./pages/NotFoundPage";
+import ProjectDetailPage from "./pages/ProjectDetailPage";
 import ProjectsPage from "./pages/ProjectsPage";
 import SkillsPage from "./pages/SkillsPage";
 import TimelinePage from "./pages/TimelinePage";
@@ -17,6 +18,7 @@ function App() {
         <Route index element={<HomePage />} />
         <Route path="academic" element={<AcademicPage />} />
         <Route path="projects" element={<ProjectsPage />} />
+        <Route path="projects/:slug" element={<ProjectDetailPage />} />
         <Route path="skills" element={<SkillsPage />} />
         <Route path="timeline" element={<TimelinePage />} />
         <Route path="activities" element={<ActivitiesPage />} />

@@ -1,6 +1,5 @@
 import profile from "../data/profile.json";
-
-const SITE_URL = "https://achchuthan.lk";
+import { SITE_URL } from "../utils/seo";
 
 // Per-route SEO metadata. `SEOHead` reads these to keep the document title,
 // meta description, Open Graph tags, and canonical URL in sync with the page.
@@ -47,4 +46,21 @@ export const PAGE_META = {
       "Get in touch for teaching collaborations, freelance web projects, and research partnerships.",
     canonical: `${SITE_URL}/contact`,
   },
+};
+
+// SEO metadata for a single project detail page (/projects/:slug).
+export function projectMeta(project) {
+  const summary = project.description.split(/(?<=\.)\s/)[0];
+  return {
+    title: `${project.title} — ${profile.name}`,
+    description: summary,
+    canonical: `${SITE_URL}/projects/${project.slug}`,
+  };
+}
+
+export const NOT_FOUND_META = {
+  title: `Page not found — ${profile.name}`,
+  description: "The page you are looking for does not exist.",
+  canonical: `${SITE_URL}/`,
+  noindex: true,
 };

@@ -13,7 +13,7 @@ function Footer() {
           <span className="footer__name">Yogarajah Achchuthan</span>
         </Link>
 
-        <p className="footer__line">
+        <p className="footer__line" suppressHydrationWarning>
           © {currentYear} Yogarajah Achchuthan · v{buildNumber}
         </p>
       </div>

@@ -1,6 +1,6 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Send } from "lucide-react";
+import { Briefcase, CircleCheck, Handshake, Mail, MapPin } from "lucide-react";
+import Avatar from "../components/Avatar";
 import SectionHeading from "../components/SectionHeading";
 import profile from "../data/profile.json";
 import "./Contact.css";
@@ -33,123 +33,139 @@ function ResearchGateIcon() {
   return <span className="contact-rg-badge">RG</span>;
 }
 
+const SOCIAL_LINKS = [
+  { key: "github", label: "GitHub", icon: GitHubIcon },
+  { key: "linkedin", label: "LinkedIn", icon: LinkedInIcon },
+  { key: "researchgate", label: "ResearchGate", icon: ResearchGateIcon },
+].filter((link) => profile[link.key]);
+
 function Contact() {
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    setIsSubmitted(true);
-    event.currentTarget.reset();
-  };
-
   return (
     <MotionSection
       id="contact"
       className="contact-section"
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.15 }}
+      viewport={{ once: true, amount: "some" }}
       transition={{ duration: 0.5, ease: "easeOut" }}
     >
       <div className="contact-grid">
         <div className="contact-copy">
           <div className="contact-heading">
-            <SectionHeading
-              icon={Mail}
-              label="Contact"
-              title="Get in touch"
-            />
+            <SectionHeading icon={Mail} label="Contact" title="Get in touch" />
           </div>
+
+          <div className="contact-identity">
+            <Avatar size={88} />
+            <div className="contact-identity__text">
+              <p className="contact-identity__name">{profile.name}</p>
+              <p className="contact-identity__role">
+                {profile.role} from {profile.location}
+              </p>
+            </div>
+          </div>
+
           <p className="contact-description">
-            Open to teaching collaborations, freelance web projects, and
-            research partnerships.
+            The quickest way to reach me is by email. I&apos;m open to{" "}
+            {profile.openTo
+              .map((item) => item.toLowerCase())
+              .join(", ")
+              .replace(/, ([^,]*)$/, ", and $1")}
+            .
           </p>
 
-          <a className="contact-email-row" href={`mailto:${profile.email}`}>
-            <Mail size={16} aria-hidden="true" />
-            <span>{profile.email}</span>
-          </a>
-
-          <div className="contact-socials">
-            <a
-              className="contact-social-link"
-              href={profile.github}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <GitHubIcon />
-              <span>GitHub</span>
-            </a>
-
-            <a
-              className="contact-social-link"
-              href={profile.linkedin}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <LinkedInIcon />
-              <span>LinkedIn</span>
-            </a>
-
-            <a
-              className="contact-social-link"
-              href={profile.researchgate}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <ResearchGateIcon />
-              <span>ResearchGate</span>
+          <div className="contact-actions">
+            <a className="btn btn--primary" href={`mailto:${profile.email}`}>
+              <Mail size={17} aria-hidden="true" />
+              Email me
             </a>
           </div>
+
+          {SOCIAL_LINKS.length > 0 && (
+            <div className="contact-socials">
+              {SOCIAL_LINKS.map((link) => {
+                const Icon = link.icon;
+
+                return (
+                  <a
+                    key={link.key}
+                    className="contact-social-link"
+                    href={profile[link.key]}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <Icon />
+                    <span>{link.label}</span>
+                  </a>
+                );
+              })}
+            </div>
+          )}
         </div>
 
-        <form className="contact-form" onSubmit={handleSubmit}>
-          <label className="contact-field">
-            <span className="contact-label">Name</span>
-            <input className="contact-input" type="text" name="name" required />
-          </label>
+        <aside className="contact-card" aria-label="Contact details">
+          <dl className="contact-details">
+            <div className="contact-detail">
+              <dt>
+                <MapPin size={16} aria-hidden="true" />
+                Location
+              </dt>
+              <dd>{profile.location}</dd>
+            </div>
 
-          <label className="contact-field">
-            <span className="contact-label">Email</span>
-            <input
-              className="contact-input"
-              type="email"
-              name="email"
-              required
-            />
-          </label>
+            <div className="contact-detail">
+              <dt>
+                <Mail size={16} aria-hidden="true" />
+                Email
+              </dt>
+              <dd>
+                <a href={`mailto:${profile.email}`}>{profile.email}</a>
+              </dd>
+            </div>
 
-          <label className="contact-field">
-            <span className="contact-label">Subject</span>
-            <select
-              className="contact-select"
-              name="subject"
-              defaultValue="Teaching inquiry"
-            >
-              <option>Teaching inquiry</option>
-              <option>Project inquiry</option>
-              <option>Research</option>
-              <option>Other</option>
-            </select>
-          </label>
+            <div className="contact-detail">
+              <dt>
+                <Briefcase size={16} aria-hidden="true" />
+                Role
+              </dt>
+              <dd>{profile.tagline}</dd>
+            </div>
 
-          <label className="contact-field">
-            <span className="contact-label">Message</span>
-            <textarea
-              className="contact-textarea"
-              name="message"
-              rows="5"
-              required
-            ></textarea>
-          </label>
+            {profile.availableForConsulting && (
+              <div className="contact-detail">
+                <dt>
+                  <CircleCheck size={16} aria-hidden="true" />
+                  Availability
+                </dt>
+                <dd>
+                  <span className="contact-availability">
+                    <span
+                      className="contact-availability__dot"
+                      aria-hidden="true"
+                    ></span>
+                    Open to consulting
+                  </span>
+                </dd>
+              </div>
+            )}
 
-          <button className="btn btn--primary btn--block" type="submit">
-            <Send size={17} aria-hidden="true" />
-            Send message
-          </button>
-
-          {isSubmitted && <p className="contact-confirmation">Message sent!</p>}
-        </form>
+            {profile.openTo?.length > 0 && (
+              <div className="contact-detail">
+                <dt>
+                  <Handshake size={16} aria-hidden="true" />
+                  Open to
+                </dt>
+                <dd>
+                  <ul className="contact-chips">
+                    {profile.openTo.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </dd>
+              </div>
+            )}
+          </dl>
+        </aside>
       </div>
     </MotionSection>
   );

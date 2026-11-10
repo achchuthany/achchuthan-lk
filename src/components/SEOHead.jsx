@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { getHeadTags } from "../utils/seo";
 
 function upsertMeta(attribute, key, content) {
   let tag = document.head.querySelector(`meta[${attribute}="${key}"]`);
@@ -24,15 +25,32 @@ function upsertCanonical(url) {
   link.setAttribute("href", url);
 }
 
-function SEOHead({ title, description, canonical = "https://achchuthan.lk/" }) {
+function upsertJsonLd(data) {
+  let script = document.getElementById("person-jsonld");
+
+  if (!script) {
+    script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.id = "person-jsonld";
+    document.head.appendChild(script);
+  }
+
+  script.textContent = JSON.stringify(data);
+}
+
+// Keeps <head> in sync with the current route. Pre-rendered pages already ship
+// these tags in their HTML; this updates them on client-side navigation.
+function SEOHead({ title, description, canonical, noindex = false }) {
   useEffect(() => {
-    document.title = title;
-    upsertMeta("name", "description", description);
-    upsertMeta("property", "og:title", title);
-    upsertMeta("property", "og:description", description);
-    upsertMeta("property", "og:type", "website");
-    upsertCanonical(canonical);
-  }, [title, description, canonical]);
+    const tags = getHeadTags({ title, description, canonical, noindex });
+
+    document.title = tags.title;
+    tags.meta.forEach(([attribute, key, content]) =>
+      upsertMeta(attribute, key, content),
+    );
+    upsertCanonical(tags.canonical);
+    upsertJsonLd(tags.jsonLd);
+  }, [title, description, canonical, noindex]);
 
   return null;
 }

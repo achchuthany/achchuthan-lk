@@ -1,5 +1,8 @@
-# SPA fallback: serve index.html for client-side routes so deep links and
-# page refreshes (e.g. /projects, /academic) resolve instead of 404-ing.
-# Recognised by Netlify and Cloudflare Pages. Other hosts need an equivalent
-# rewrite (see vercel.json rewrites, or an Apache/Nginx try_files rule).
-/*    /index.html   200
+# Every route is pre-rendered to its own HTML file (scripts/prerender.js) and
+# unknown paths fall back to 404.html automatically, so no SPA rewrite is
+# needed. Recognised by Netlify and Cloudflare Pages; vercel.json mirrors these.
+
+# Old blog post URLs on this domain -> the project pages that replaced them.
+/2021/06/macosis.html  /projects/macosys  301!
+/projects/macosis      /projects/macosys  301!
+/2022/08/myuoj.html    /projects/myuoj    301!

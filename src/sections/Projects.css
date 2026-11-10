@@ -64,6 +64,16 @@
   color: var(--color-text);
 }
 
+.projects-card__title a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.projects-card__title a:hover {
+  color: var(--color-accent);
+}
+
 .projects-card__meta .badge {
   flex-shrink: 0;
 }

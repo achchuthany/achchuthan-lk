@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight, GraduationCap, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
+import Avatar from "../components/Avatar";
 import profile from "../data/profile.json";
 import "./Hero.css";
 
@@ -18,6 +19,8 @@ function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
+        <Avatar size={120} className="hero-avatar" />
+
         {profile.availableForConsulting && (
           <span className="hero-badge">
             <span className="hero-badge-dot" aria-hidden="true"></span>

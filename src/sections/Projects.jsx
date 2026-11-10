@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ExternalLink, FileText, Rocket } from "lucide-react";
+import { ArrowRight, ExternalLink, Rocket } from "lucide-react";
+import { Link } from "react-router-dom";
 import Badge from "../components/Badge";
 import Card from "../components/Card";
 import FilterTabs from "../components/FilterTabs";
@@ -12,7 +13,15 @@ const MotionSection = motion.section;
 const MotionDiv = motion.div;
 const MotionDivItem = motion.div;
 
-const FILTERS = ["All", "Web", "Mobile"];
+const CATEGORY_LABELS = { web: "Web", mobile: "Mobile" };
+
+// Only offer a filter for categories that actually have projects, so a tab
+// never leads to an empty list. With a single category, no filter is shown.
+const CATEGORIES = [...new Set(projects.map((project) => project.category))];
+const FILTERS = [
+  "All",
+  ...CATEGORIES.map((category) => CATEGORY_LABELS[category] ?? category),
+];
 
 const containerVariants = {
   hidden: {},
@@ -41,7 +50,7 @@ const itemVariants = {
 function getInitials(title) {
   return title
     .split(/\s+/)
-    .filter(Boolean)
+    .filter((word) => /^[A-Za-z0-9]/.test(word))
     .slice(0, 2)
     .map((word) => word[0].toUpperCase())
     .join("");
@@ -53,7 +62,10 @@ function Projects() {
   const filteredProjects =
     filter === "All"
       ? projects
-      : projects.filter((project) => project.category === filter.toLowerCase());
+      : projects.filter(
+          (project) =>
+            (CATEGORY_LABELS[project.category] ?? project.category) === filter,
+        );
 
   return (
     <MotionSection
@@ -61,7 +73,7 @@ function Projects() {
       className="projects-section"
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.15 }}
+      viewport={{ once: true, amount: "some" }}
       transition={{ duration: 0.5, ease: "easeOut" }}
     >
       <div className="projects-header">
@@ -71,9 +83,11 @@ function Projects() {
           title="Systems and products built for education and operations."
         />
 
-        <div className="projects-filter-row">
-          <FilterTabs tabs={FILTERS} active={filter} onChange={setFilter} />
-        </div>
+        {CATEGORIES.length > 1 && (
+          <div className="projects-filter-row">
+            <FilterTabs tabs={FILTERS} active={filter} onChange={setFilter} />
+          </div>
+        )}
       </div>
 
       {filteredProjects.length === 0 ? (
@@ -85,7 +99,7 @@ function Projects() {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.15 }}
+          viewport={{ once: true, amount: "some" }}
         >
           {filteredProjects.map((project) => (
             <MotionDivItem key={project.id} variants={itemVariants}>
@@ -96,7 +110,11 @@ function Projects() {
 
                 <div className="projects-card__body">
                   <div className="projects-card__meta">
-                    <h3 className="projects-card__title">{project.title}</h3>
+                    <h3 className="projects-card__title">
+                      <Link to={`/projects/${project.slug}`}>
+                        {project.title}
+                      </Link>
+                    </h3>
                     {project.duration && (
                       <Badge variant="default">{project.duration}</Badge>
                     )}
@@ -115,6 +133,14 @@ function Projects() {
                   </div>
 
                   <div className="projects-card__footer">
+                    <Link
+                      className="projects-card__link"
+                      to={`/projects/${project.slug}`}
+                    >
+                      <ArrowRight size={16} aria-hidden="true" />
+                      <span>View details</span>
+                    </Link>
+
                     {project.hosted && (
                       <a
                         className="projects-card__link"
@@ -124,18 +150,6 @@ function Projects() {
                       >
                         <ExternalLink size={16} aria-hidden="true" />
                         <span>Live site</span>
-                      </a>
-                    )}
-
-                    {project.blog && (
-                      <a
-                        className="projects-card__link"
-                        href={project.blog}
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <FileText size={16} aria-hidden="true" />
-                        <span>Case study</span>
                       </a>
                     )}
                   </div>

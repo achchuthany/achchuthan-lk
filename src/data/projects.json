@@ -1,22 +1,38 @@
 [
   {
-    "id": "proj-macosis",
-    "title": "Student Information System for the Faculty of Management Studies and Commerce",
-    "description": "A system that enables the administrator of the Faculty of Management Studies and Commerce to access a student's academic information, while allowing the student to update their personal profile. It simplifies the task of maintaining personal records, academic records such as course enrollment, examination results, and overall grade point average (OGPA).",
+    "id": "proj-macosys",
+    "slug": "macosys",
+    "title": "MaCoSys — Unified Digital Platform for the Faculty of Management Studies and Commerce",
+    "description": "MaCoSys is the unified digital platform of the Faculty of Management Studies and Commerce, University of Jaffna, connecting students, academic staff, and administration in one system. Since its first release in 2020 it has grown from student records, enrollment, and automatic GPA calculation into a full faculty ecosystem covering online examination applications, assessment mark approval, internships, staff payment claims, official notices, and SMS and email communication. It serves nine user roles, from students and lecturers to heads of department, the Dean's office, the examination branch, and industry mentors, and includes a companion mobile app for results and GPA.",
+    "highlights": [
+      "Online examination applications with payment-proof upload, office approval, automatic seat assignment, and generated admission cards and attendance sheets.",
+      "Exam eligibility calculated from marks and attendance, with SMS reminders while applications are open.",
+      "Assessment mark entry and bulk upload with head-of-department approval and a full audit trail.",
+      "Complete student profiles that combine results, marks, enrollment, and applications, backed by result analysis and grade charts.",
+      "Exam duty management and staff payment claims: lecturer assignments without double-booking, calculated pay, and generated PDF claim forms.",
+      "Internship management, from application and placement approval to work logs, mentor evaluation, and final reports.",
+      "Bulk email and SMS with delivery tracking, PIN-based phone verification, and categorised official notices.",
+      "Secure role-based access for nine user roles, Google sign-in, and a companion mobile app showing results and GPA."
+    ],
     "stack": ["Laravel", "MySQL", "HTML", "CSS", "Bootstrap"],
     "category": "web",
     "hosted": "https://apps.maco.jfn.ac.lk",
-    "blog": "https://www.achchuthan.lk/2021/06/macosis.html",
-    "duration": "1 Year"
+    "duration": "2020 – Present"
   },
   {
     "id": "proj-myuoj",
+    "slug": "myuoj",
     "title": "Student Enrollment System for the University of Jaffna",
     "description": "A system that facilitates undergraduate enrollment at the University of Jaffna. It enables students to enroll for their desired program and assists the admission branch in receiving and processing enrollment applications, sending acknowledgements, assigning registration and index numbers, and generating flexible reports.",
+    "highlights": [
+      "Students enroll online for their desired undergraduate program.",
+      "The admission branch receives, processes, and acknowledges applications.",
+      "Assigns registration and index numbers automatically.",
+      "Generates flexible reports for the admission branch."
+    ],
     "stack": ["Laravel", "MySQL", "HTML", "CSS", "Bootstrap"],
     "category": "web",
     "hosted": "https://sis.jfn.ac.lk",
-    "blog": "https://www.achchuthan.lk/2022/08/myuoj.html",
     "duration": "6 Months"
   }
 ]
