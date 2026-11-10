@@ -1,11 +1,18 @@
 {
   "name": "Yogarajah Achchuthan",
   "tagline": "Computer Technology Instructor and Full-Stack Developer",
+  "role": "Developer",
   "bio": "I teach undergraduate computing courses with a focus on practical systems, networking, and software engineering foundations. Alongside teaching, I build web and mobile solutions for small businesses and academic units. My work combines classroom pedagogy, research-minded problem solving, and production-ready development practices.",
   "location": "Jaffna, Sri Lanka",
   "email": "achchuthany@jfn.ac.lk",
   "github": "https://github.com/achchuthany",
   "linkedin": "https://www.linkedin.com/in/achchuthany",
   "researchgate": "https://www.researchgate.net/profile/Yogarajah-Achchuthan",
-  "availableForConsulting": true
+  "availableForConsulting": true,
+  "avatar": "",
+  "openTo": [
+    "Teaching collaborations",
+    "Freelance web projects",
+    "Research partnerships"
+  ]
 }

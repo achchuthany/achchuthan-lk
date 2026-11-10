@@ -18,6 +18,13 @@ const STACK_COLUMNS = [
 
 const FILTERS = ["All", ...STACK_COLUMNS.map((column) => column.label)];
 
+// `level` in stack.json -> badge text. The value doubles as the Badge variant
+// (`badge--expert`, `badge--professional`).
+const LEVEL_LABELS = {
+  expert: "Expert",
+  professional: "Professional",
+};
+
 function Stack() {
   const [filter, setFilter] = useState("All");
 
@@ -32,7 +39,7 @@ function Stack() {
       className="stack-section"
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.15 }}
+      viewport={{ once: true, amount: "some" }}
       transition={{ duration: 0.5, ease: "easeOut" }}
     >
       <div className="stack-section__inner">
@@ -74,7 +81,7 @@ function Stack() {
                           </span>
                         </span>
                         <Badge variant={skill.level}>
-                          {skill.level === "expert" ? "Expert" : "Proficient"}
+                          {LEVEL_LABELS[skill.level] ?? skill.level}
                         </Badge>
                       </div>
                     </div>

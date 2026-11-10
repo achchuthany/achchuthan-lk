@@ -8,12 +8,12 @@
     {
       "name": "Node.js",
       "years": 5,
-      "level": "proficient"
+      "level": "professional"
     },
     {
       "name": "Express",
       "years": 4,
-      "level": "proficient"
+      "level": "professional"
     }
   ],
   "frontend": [
@@ -32,7 +32,7 @@
     {
       "name": "React Native",
       "years": 3,
-      "level": "proficient"
+      "level": "professional"
     }
   ],
   "infrastructure": [
@@ -44,12 +44,12 @@
     {
       "name": "Kubernetes",
       "years": 2,
-      "level": "proficient"
+      "level": "professional"
     },
     {
       "name": "Docker",
       "years": 4,
-      "level": "proficient"
+      "level": "professional"
     }
   ]
 }

@@ -1,0 +1,27 @@
+/* Visually hidden until focused, then pinned above the navbar so keyboard
+   users can jump straight past the navigation. */
+.skip-link {
+  position: absolute;
+  top: var(--space-2);
+  left: var(--space-2);
+  z-index: 2000;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-pill);
+  background: var(--color-accent-solid);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transform: translateY(-200%);
+  transition: transform 0.15s ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+/* <main> receives programmatic focus on route change; don't draw a ring
+   around the whole page for that. */
+.app-main:focus {
+  outline: none;
+}

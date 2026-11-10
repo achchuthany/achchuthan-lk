@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run build
+
+      # Fail if pre-rendering stopped producing a page, the 404 fallback or the
+      # sitemap.
+      - name: Check pre-rendered output
+        run: |
+          for f in index.html projects.html contact.html 404.html sitemap.xml; do
+            test -s "dist/$f" || { echo "missing dist/$f"; exit 1; }
+          done
+          grep -q '<h1' dist/index.html || { echo "index.html has no rendered content"; exit 1; }
